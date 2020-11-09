@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head><title>Fruits Music</title>
+	<style>
+		#menubar ul li a:hover{color:blue;}
+		#menubar ul li a:active{color:deepskyblue;}
+		#main-menu ul, li{
+			margin=0;
+			padding:0;
+			list-style:none;
+		}
+		#sub-menu{
+			position:absolute;
+			background:#F7BE81;
+			opacity: 0;
+			visibility: hidden;
+			margin-left:33px;
+		}
+		#sub-menu > li{
+			padding:10px 30px;
+			border-bottom: 1px solid white;
+		}
+		#sub-menu > li > a{
+			font-size:1.1em;
+			color:black;
+			text-decoration: none;
+			text-align: center;
+		}
+		#sub-menu > li a:hover{
+			text-decoration: underline;
+		}
+		#main-menu{
+			height:50px;
+			width:1000px;
+			margin-left:200px;
+			background:orange;
+			border-radius: 10px
+		}
+		#main-menu > li:hover #sub-menu{
+			opacity: 1;
+			visibility: visible;
+		}
+		#main-menu > li{
+			float:left;
+			line-height: 34px;
+			width:190px;
+			text-align: center;
+		}
+		#main-menu > li > a{
+			color:white;
+			text-align: center;
+			text-decoration:none;
+			font-size:120%;
+			font-weight: bold;
+			display: block;
+			padding:8px 16px;;
+			letter-spacing:0.05em;
+		}
+		#content div{
+			position: absolute;
+			left:200px;
+			top:200px;
+			width:950px;
+			height:1600px;
+			border:2px solid orange;
+			font-size:1.3em;
+			font-weight:bold;
+			padding:20px;
+		}
+		#content div ol li ul li{
+			font-weight:normal;
+			font-size:0.85em;
+		}
+	</style>
+	<script>
+	</script>
+</head>
+<body>
+	<a href="2017203061_main.html"><img src="media/Orange.png" style="position:absolute" width="200px" height="200px"></a>
+	<nav id="menubar">
+		<ul id="main-menu">
+			<li><a href="2017203061_genre_rock.html">장르별</a>
+				<ul id="sub-menu">
+					<li><a href="2017203061_genre_rock.html">Rock</a></li>
+					<li><a href="2017203061_genre_ballad.html">Ballad</a></li>
+					<li><a href="2017203061_genre_country.html">Country</a></li>
+				</ul>
+			</li>
+			<li><a href="2017203061_kpop_1020.html">국내음악</a>
+			<ul id="sub-menu">
+					<li><a href="2017203061_kpop_1020.html">10~20대</a></li>
+					<li><a href="2017203061_kpop_3040.html">30~40대</a></li>
+				</ul>
+			</li>
+			<li><a href="2017203061_pop_billboard.html">해외음악</a>
+			<ul id="sub-menu">
+					<li><a href="2017203061_pop_billboard.html">Billboard</a></li>
+					<li><a href="2017203061_pop_spotify.html">Spotify</a></li>
+				</ul>
+			</li>
+			<li><a href="2017203061_artist_korean.html">아티스트</a>
+			<ul id="sub-menu">
+					<li><a href="2017203061_artist_korean.html">&nbsp;국내&nbsp;</a></li>
+					<li><a href="2017203061_artist_abroad.html">&nbsp;해외&nbsp;</a></li>
+				</ul></li>
+			<li><a href="2017203061_contents.html">기술목차</a></li>
+		</ul>
+	</nav>
+
+	<nav id="content">
+		<div>
+			<h2 style="text-align: center;">목차</h2>
+			<ol style="line-height: 1.6em">
+				<li>1.메인 페이지 + 공통으로 사용된 기술 &emsp;<a href="2017203061_main.html">[Main 이동]</a><br>
+					<ul style="margin-left:5px">
+						<li>1-1)&nbsp;html문서 구조화: section, article, nav 등 이용하여 작성</li>
+						<li>1-2)&nbsp;상단의 메뉴바: 리스트에 CSS 적용하여 작성(position, 크기, 배경, 여백, hover/click할 경우 글자색 변경 등) <br>
+							1-3)&nbsp;또한 링크를 통해 메뉴 리스트의 요소들을 클릭하면 해당 내용이 작성된 다른 페이지로 이동하도록 하였습니다.(좌측 로고 클릭 시 메인페이지 이동 포함)<br>
+							1-4)&nbsp;또한 각각의 메뉴마다 unordered list를 추가하여 평소엔 opacity=0, visibility=hidden으로 설정하여 보이지 않게 하다가 마우스를 올리면 opacity=1, visibility=visible로 바꾸게 하여 sub-menu를 구성하였습니다. sub-menu에 마우스를 올리면 글자색바뀜+밑줄 효과를 넣었습니다.
+						</li>
+						<li>1-5)&nbsp;테이블: 테이블에 CSS를 적용하여 작성(position, 크기, 배경 등), 이미지 삽입하였습니다.<br>
+							1-6)&nbsp;"재생", "Info" 부분에 링크를 적용한 이미지 버튼 생성. 재생 버튼 클릭 시 해당 음악을 Youtube 링크를 통해 재생하도록 하였습니다.<br>
+						1-7)&nbsp;테이블의 행에 마우스를 올리면 색깔이 바뀌도록 하였으며, 행을 클릭하면 해당 행의 색이 바뀌도록 onclick을 사용하여 구현하였습니다.<br>또한 행을 더블클릭하면 ondblclick을 통해 info링크를 클릭한 것 처럼 새 창을 띄우도록 하였습니다.</li>
+						<li>1-8)&nbsp;Info 링크: 자바스크립트의 window.open()함수를 이용하였으며 사진을 클릭 시 500x500 크기의 새 웹 페이지를 생성해 해당 곡의 정보를 보여주고, 댓글창을 구현하였습니다.</li>
+						<li>1-9)&nbsp;로그인 폼: 자바스크립트를 이용하였으며, 아이디와 비밀번호 입력 후 로그인 버튼을 클릭할 시 "아이디"님 환영합니다!를 출력하며 로그아웃 버튼이 생성되도록 하였습니다.</li>
+						<li><strong><br>해당 페이지에서 content에 마우스를 올릴 경우 사용한 기술이 보입니다.(title=""이용)<br><br></strong></li>
+					</ul>
+				</li>
+				<li>2."장르별" 페이지에 사용된 기술 &emsp;<a href="2017203061_genre_rock.html" > [장르별 이동]</a></li>
+					<ul style="font-weight:normal;font-size:0.85em;margin-left:5px;">
+						<li>2-1)&nbsp;구조화, 메뉴바, 로그인 메인 페이지와 동일.</li>
+						<li>2-2)&nbsp;음악 테이블의 캡션 부분에 각 장르 페이지로 이동 가능한 버튼 생성.(현재 선택한 장르 버튼은 회색으로, 나머진 다른색으로 구현)</li>
+					</ul>
+
+				<li>3."국내음악" 페이지에 사용된 기술 &emsp;<a href="2017203061_kpop_1020.html" > [국내음악 이동]</a></li>
+					<ul style="font-weight:normal;font-size:0.85em;margin-left:5px;">
+						<li>3-1)&nbsp;구조화, 메뉴바, 로그인 메인 페이지와 동일.</li>
+						<li>3-2)&nbsp;음악 테이블의 캡션 부분에 각 연령대 별 음악으로 이동 가능한 버튼 생성.(현재 선택한 버튼 배경색은 회색으로, 나머진 다른색으로 구현)</li>
+					</ul>
+
+				<li>4."해외음악" 페이지에 사용된 기술 &emsp;<a href="2017203061_pop_billboard.html" > [해외음악 이동]</a></li>
+					<ul style="font-weight:normal;font-size:0.85em;margin-left:5px;">
+						<li>4-1)&nbsp;구조화, 메뉴바, 로그인 메인 페이지와 동일.</li>
+						<li>4-2)&nbsp;음악 테이블의 캡션 부분에 차트별 인기음악으로 이동 가능한 버튼 생성.(현재 선택한 차트 버튼 배경색은 회색으로, 나머진 다른색으로 구현)</li>
+						<li>4-3)&nbsp;Bill Board 메뉴에서는 Bill Board 차트 사이트로, Spotify 메뉴에서는 Spotify 사이트로 이동하는 버튼 생성.(CSS 이용해 색상,테두리,패딩 등 설정)</li>
+					</ul>
+
+				<li>5."아티스트" 페이지에 사용된 기술 &emsp;<a href="2017203061_artist_korean.html" > [아티스트 이동]</a></li>
+					<ul style="font-weight:normal;font-size:0.85em;margin-left:5px;">
+						<li>5-1)&nbsp;구조화, 메뉴바, 로그인 메인 페이지와 동일.</li>
+						<li>5-2)&nbsp;음악 테이블의 캡션 부분에 국내/해외 아티스트 페이지로 이동 가능한 버튼 생성.(현재 선택한 차트 버튼 배경색은 회색으로, 나머진 다른색으로 구현)</li>
+						<li>5-3)&nbsp;Info 버튼: 버튼을 누르면 600x600 사이즈의 새 페이지가 등장하고, 해당 artist의 이름이 페이지 title로 설정된다.<br>
+						-artist의 정보와 대표 앨범들이 이미지로 나열되어 있으며, 맨 아래에 속이 빈 하트그림을 클릭하면 색칠된 하트로 바뀌도록 구현하였다.(자바스크립트 이용)</li>
+						<li>5-4)&nbsp;Link 버튼: 색칠되지 않은 하트 사진을 클릭하면 색칠된 하트 모양으로 바뀌도록 구현하여 Like표시를 할 수 있도록 하였다. 또한 색칠된 하트를 다시 클릭하면 원래의 색칠되지 않은 하트 사진으로 바뀌도록 하였다.(자바스크립트 이용.)</li>
+					</ul>
+			</ol>
+		</div>
+	</nav>
+	
+</body>
+</html>
